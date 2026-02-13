@@ -2,7 +2,7 @@
   "name": "exam-helper",
   "version": "1.0.0",
   "description": "אפליקציה ללימוד מודרניזם במוזיקה",
-  "homepage": "https://LinoyBu96.github.io/learn",
+  "homepage": "https://motiprtz.github.io/modernism",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
