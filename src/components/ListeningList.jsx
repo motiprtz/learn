@@ -206,8 +206,21 @@ function ListeningList() {
                         {filteredWorks.map((work, workIdx) => (
                           <div key={workIdx} className="work-item">
                             <div className="work-header">
-                              <h4>{work.title}</h4>
-                              <span className="work-genre">{work.genre}</span>
+                              <div className="work-title-group">
+                                <h4>{work.title}</h4>
+                                <span className="work-genre">{work.genre}</span>
+                              </div>
+                              {work.link && (
+                                <a 
+                                  href={work.link} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="listen-button"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  🎵 האזן
+                                </a>
+                              )}
                             </div>
                             {work.structure && (
                               <div className="work-structure">
@@ -260,9 +273,22 @@ function ListeningList() {
                         <span className="genre-name">🎭 {work.genre}</span>
                       </div>
                     </div>
-                    <button className="expand-icon">
-                      {isExpanded ? '▼' : '▶'}
-                    </button>
+                    <div className="header-actions">
+                      {work.link && (
+                        <a 
+                          href={work.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="listen-button"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          🎵 האזן
+                        </a>
+                      )}
+                      <button className="expand-icon">
+                        {isExpanded ? '▼' : '▶'}
+                      </button>
+                    </div>
                   </div>
 
                   {isExpanded && (

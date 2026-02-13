@@ -259,11 +259,15 @@
   gap: 0.5rem;
 }
 
+.work-title-group {
+  flex: 1;
+  min-width: 200px;
+}
+
 .work-header h4 {
   font-size: 1.25rem;
   color: #2d3748;
-  margin: 0;
-  flex: 1;
+  margin: 0 0 0.5rem 0;
 }
 
 .work-genre {
@@ -273,6 +277,28 @@
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+.listen-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+.listen-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 .work-structure {
@@ -370,10 +396,18 @@
   padding: 1.5rem;
   cursor: pointer;
   transition: background 0.2s ease;
+  gap: 1rem;
 }
 
 .work-card-header:hover {
   background: #f7fafc;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .work-main-info {
