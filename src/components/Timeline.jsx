@@ -1,14 +1,51 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Search, Filter, Calendar, Grid } from 'lucide-react'
 import { timelineEvents, composers } from '../data/timeline'
 import { periods } from '../data/periods'
 import './Timeline.css'
 
 function Timeline() {
+  // טען העדפות שמורות מ-localStorage
+  const loadViewMode = () => {
+    try {
+      return localStorage.getItem('timeline_viewMode') || 'timeline'
+    } catch (error) {
+      console.error('Error loading viewMode:', error)
+      return 'timeline'
+    }
+  }
+
+  const loadShowComposers = () => {
+    try {
+      const saved = localStorage.getItem('timeline_showComposers')
+      return saved === 'true'
+    } catch (error) {
+      console.error('Error loading showComposers:', error)
+      return false
+    }
+  }
+
   const [searchTerm, setSearchTerm] = useState('')
   const [filterType, setFilterType] = useState('all')
-  const [showComposers, setShowComposers] = useState(false)
-  const [viewMode, setViewMode] = useState('timeline') // 'timeline' or 'periods'
+  const [showComposers, setShowComposers] = useState(loadShowComposers)
+  const [viewMode, setViewMode] = useState(loadViewMode)
+
+  // שמור העדפות ב-localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('timeline_viewMode', viewMode)
+    } catch (error) {
+      console.error('Error saving viewMode:', error)
+    }
+  }, [viewMode])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('timeline_showComposers', showComposers.toString())
+    } catch (error) {
+      console.error('Error saving showComposers:', error)
+    }
+  }, [showComposers])
 
   const filteredEvents = timelineEvents.filter(event => {
     const matchesSearch = event.title.includes(searchTerm) || 

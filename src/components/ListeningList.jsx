@@ -1,12 +1,61 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { compositions } from '../data/compositions'
 import './ListeningList.css'
 
 function ListeningList() {
+  // טען העדפות שמורות מ-localStorage
+  const loadPreferences = () => {
+    try {
+      const savedSortBy = localStorage.getItem('listeningList_sortBy')
+      const savedComposer = localStorage.getItem('listeningList_selectedComposer')
+      const savedExpanded = localStorage.getItem('listeningList_expandedItems')
+      
+      return {
+        sortBy: savedSortBy || 'composer',
+        selectedComposer: savedComposer || 'all',
+        expandedItems: savedExpanded ? new Set(JSON.parse(savedExpanded)) : new Set()
+      }
+    } catch (error) {
+      console.error('Error loading preferences:', error)
+      return {
+        sortBy: 'composer',
+        selectedComposer: 'all',
+        expandedItems: new Set()
+      }
+    }
+  }
+
+  const preferences = loadPreferences()
+  
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedComposer, setSelectedComposer] = useState('all')
-  const [sortBy, setSortBy] = useState('composer') // 'composer', 'title', 'chronological'
-  const [expandedItems, setExpandedItems] = useState(new Set())
+  const [selectedComposer, setSelectedComposer] = useState(preferences.selectedComposer)
+  const [sortBy, setSortBy] = useState(preferences.sortBy)
+  const [expandedItems, setExpandedItems] = useState(preferences.expandedItems)
+
+  // שמור העדפות ב-localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('listeningList_sortBy', sortBy)
+    } catch (error) {
+      console.error('Error saving sortBy:', error)
+    }
+  }, [sortBy])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('listeningList_selectedComposer', selectedComposer)
+    } catch (error) {
+      console.error('Error saving selectedComposer:', error)
+    }
+  }, [selectedComposer])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('listeningList_expandedItems', JSON.stringify([...expandedItems]))
+    } catch (error) {
+      console.error('Error saving expandedItems:', error)
+    }
+  }, [expandedItems])
 
   // קבץ יצירות לפי מלחין
   const compositionsByComposer = useMemo(() => {

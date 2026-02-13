@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from 'react-simple-maps'
 import { composers } from '../data/timeline'
 import './ComposerMap.css'
@@ -57,9 +57,29 @@ const getCityCoordinates = (cityName) => {
 };
 
 function ComposerMap() {
+  // טען העדפות שמורות מ-localStorage
+  const loadTimeFilter = () => {
+    try {
+      const saved = localStorage.getItem('composerMap_timeFilter')
+      return saved ? JSON.parse(saved) : { start: 1800, end: 1950 }
+    } catch (error) {
+      console.error('Error loading timeFilter:', error)
+      return { start: 1800, end: 1950 }
+    }
+  }
+
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedComposer, setSelectedComposer] = useState(null);
-  const [timeFilter, setTimeFilter] = useState({ start: 1800, end: 1950 });
+  const [timeFilter, setTimeFilter] = useState(loadTimeFilter);
+
+  // שמור סינון זמן ב-localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('composerMap_timeFilter', JSON.stringify(timeFilter))
+    } catch (error) {
+      console.error('Error saving timeFilter:', error)
+    }
+  }, [timeFilter])
 
   // קבץ מלחינים לפי עיר
   const composersByCity = useMemo(() => {

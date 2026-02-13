@@ -1,14 +1,36 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { concepts } from '../data/concepts'
 import './Flashcards.css'
 
 function Flashcards() {
+  // טען נתונים שמורים מ-localStorage
+  const loadMasteredCards = () => {
+    try {
+      const saved = localStorage.getItem('masteredCards')
+      if (saved) {
+        return new Set(JSON.parse(saved))
+      }
+    } catch (error) {
+      console.error('Error loading mastered cards:', error)
+    }
+    return new Set()
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [showAll, setShowAll] = useState(false)
-  const [masteredCards, setMasteredCards] = useState(new Set())
+  const [masteredCards, setMasteredCards] = useState(loadMasteredCards)
   const [studyMode, setStudyMode] = useState('all') // 'all', 'unmastered', 'mastered'
+
+  // שמור את הכרטיסיות שנשלטו ב-localStorage כשהן משתנות
+  useEffect(() => {
+    try {
+      localStorage.setItem('masteredCards', JSON.stringify([...masteredCards]))
+    } catch (error) {
+      console.error('Error saving mastered cards:', error)
+    }
+  }, [masteredCards])
 
   // Filter concepts based on search and study mode
   const filteredConcepts = useMemo(() => {
