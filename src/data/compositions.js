@@ -6,6 +6,7 @@ export const compositions = [
     title: "Tristan und Isolde",
     year: "1859-1865",
     genre: "אופרה ב3 מערכות",
+    link: "https://www.youtube.com/watch?v=J-qoaioG2UA", // Prelude & Liebestod
     movements: [
       {
         id: "1a",
@@ -32,6 +33,7 @@ export const compositions = [
     title: "Symphony no. 4 in E minor Opus 98",
     year: "1884-1885",
     genre: "סימפוניה",
+    link: "https://www.youtube.com/watch?v=ckuUq7im8H4", // Carlos Kleiber (Reference recording)
     movements: [
       {
         id: "2a",
@@ -53,6 +55,7 @@ export const compositions = [
     title: "Clarinet quintet in B minor Opus 115",
     year: "1891",
     genre: "קווינטט",
+    link: "https://www.youtube.com/watch?v=R32w77f4c3c", // Martin Fröst
     movements: [
       {
         id: "3a",
@@ -84,6 +87,7 @@ export const compositions = [
     title: "Boris Godunov, Prologue",
     year: "1869-1874",
     genre: "אופרה",
+    link: "https://www.youtube.com/watch?v=MkM8eA7QcVI", // Gergiev, Prologue
     movements: [
       {
         id: "4a",
@@ -100,6 +104,7 @@ export const compositions = [
     title: "Prince Igor, Polovetsian Dances (Act 2 finale)",
     year: "1869-1887",
     genre: "אופרה",
+    link: "https://www.youtube.com/watch?v=FsTVFxgU60U", // Polovtsian Dances with Choir
     movements: [
       {
         id: "5a",
@@ -116,6 +121,7 @@ export const compositions = [
     title: "Peer Gynt, Orchestral suite no. 1 Opus 46",
     year: "1875",
     genre: "מוזיקת במה",
+    link: "https://www.youtube.com/watch?v=dyM2AnA96yE", // Full Suite 1
     movements: [
       {
         id: "6a",
@@ -147,6 +153,7 @@ export const compositions = [
     title: "La Bohème Duet from Act I",
     year: "1896",
     genre: "אופרה",
+    link: "https://www.youtube.com/watch?v=0w5Z5g8yDpw", // Pavarotti & Freni (The classic)
     movements: [
       {
         id: "7a",
@@ -173,6 +180,7 @@ export const compositions = [
     title: "Symphony no. 7, II movement",
     year: "1881-1883",
     genre: "סימפוניה",
+    link: "https://www.youtube.com/watch?v=2T_oT6D_A7Q", // 2nd Movement Adagio (Karajan)
     movements: [
       {
         id: "8a",
@@ -189,6 +197,7 @@ export const compositions = [
     title: "Symphony no. 1",
     year: "1888",
     genre: "סימפוניה",
+    link: "https://www.youtube.com/watch?v=cQFjDBFXN58", // Bernstein, Vienna Philharmonic
     movements: [
       {
         id: "9a",
@@ -220,6 +229,7 @@ export const compositions = [
     title: "Preludes book 1, nos. 2, 8, 10",
     year: "1909-1910",
     genre: "פרלוד",
+    link: "https://www.youtube.com/watch?v=LLbpHQOnVKA", // Krystian Zimerman
     movements: [
       {
         id: "10a",
@@ -246,6 +256,7 @@ export const compositions = [
     title: "Prélude à l'après-midi d'un faune",
     year: "1894",
     genre: "פרלוד",
+    link: "https://www.youtube.com/watch?v=Y9iDOt2WbjY", // Orchestre de Paris
     movements: [
       {
         id: "11a",
@@ -262,6 +273,7 @@ export const compositions = [
     title: "Le poème de l'extase",
     year: "1905-1908",
     genre: "פואמה סימפונית",
+    link: "https://www.youtube.com/watch?v=WtehX5C4Cj8", // Pierre Boulez
     movements: [
       {
         id: "12a",
@@ -278,6 +290,7 @@ export const compositions = [
     title: "Romanian Dances (from Hungary), nos. 1-2",
     year: "1915",
     genre: "ריקוד הונגרי",
+    link: "https://www.youtube.com/watch?v=Z50OpKM5qOs", // Zoltan Kocsis
     movements: [
       {
         id: "13a",
@@ -299,6 +312,7 @@ export const compositions = [
     title: "Le sacre du printemps, nos. 1-2",
     year: "1913",
     genre: "בלט סימפוני",
+    link: "https://www.youtube.com/watch?v=Z0xNo28945E", // Valery Gergiev (Full)
     movements: [
       {
         id: "14a",
@@ -320,6 +334,7 @@ export const compositions = [
     title: "Pierrot Lunaire no. 8 (Nacht. Passacaglia)",
     year: "1912",
     genre: "מלודרמה קאמרית",
+    link: "https://www.youtube.com/watch?v=1gafF5sbnB0", // Pierre Boulez
     movements: [
       {
         id: "15a",
@@ -336,6 +351,7 @@ export const compositions = [
     title: "The Survived from Warsaw",
     year: "1947",
     genre: "קנטטה",
+    link: "https://www.youtube.com/watch?v=rGWai0SEpUQ", // Claudio Abbado
     movements: [
       {
         id: "16a",
@@ -352,6 +368,7 @@ export const compositions = [
     title: "Lyrische Suite, I movement: Allegretto giovale",
     year: "1925-1926",
     genre: "סוויטה לירית",
+    link: "https://www.youtube.com/watch?v=jRHoOASb0hk", // Alban Berg Quartett
     movements: [
       {
         id: "17a",
@@ -368,6 +385,7 @@ export const compositions = [
     title: "The Unanswered Question",
     year: "1908",
     genre: "יצירה סימפונית",
+    link: "https://www.youtube.com/watch?v=v9Y6r1-2y5Q", // Leonard Bernstein
     movements: [
       {
         id: "18a",
@@ -384,6 +402,7 @@ export const compositions = [
     title: "Rhapsody in Blue",
     year: "1924",
     genre: "רפסודיה",
+    link: "https://www.youtube.com/watch?v=cH2PH0auTUU", // Bernstein conducting & playing
     movements: [
       {
         id: "19a",
@@ -400,6 +419,7 @@ export const compositions = [
     title: "Mathis der Mahler, I movement: Engelkonzert",
     year: "1934",
     genre: "סימפוניה תוכניתית",
+    link: "https://www.youtube.com/watch?v=8XG748X8yWw", // Claudio Abbado
     movements: [
       {
         id: "20a",
@@ -416,6 +436,7 @@ export const compositions = [
     title: "Piano trio no. 2 in E minor",
     year: "1944",
     genre: "טריו לפסנתר",
+    link: "https://www.youtube.com/watch?v=Vz_Zk3q0hYU", // Argerich, Kremer, Maisky
     movements: [
       {
         id: "21a",
@@ -447,6 +468,7 @@ export const compositions = [
     title: "Quatuor pour la fin du temps, VI movement",
     year: "1941",
     genre: "רביעייה",
+    link: "https://www.youtube.com/watch?v=QAvaLg1XjT0", // Myung-Whun Chung (Historical context)
     movements: [
       {
         id: "22a",
@@ -458,4 +480,3 @@ export const compositions = [
     category: "מוזיקה קאמרית"
   }
 ];
-
